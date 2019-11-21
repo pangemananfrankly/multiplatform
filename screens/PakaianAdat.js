@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, FlatList, StyleSheet, Image, Button} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const students = [
+const Pakaian = [
     { name: 'Gambar1', fakultas: 'Kap.Kep Talaud'} 
     // { name: 'Student #2', fakultas: 'FEB'},
     // { name: 'Student #3', fakultas: 'Nursing'},
@@ -14,19 +15,17 @@ const students = [
     // { name: 'Student #10', fakultas: 'FIK'}
 ];
 
-const StudentScreen = () => {
+const PakaianAdat = () => {
     return (
         
         <FlatList 
-            data={students}
+            data={Pakaian}
             renderItem={({ item })=>
                 <View style={styles.textStyle}>
                     
                          <Image style={styles.images}
-                            source={require('../assets/images/Talaud.jpg')  }
-                       
-                        />
-                         
+                            source={require('../assets/Talaud.jpg')  }
+                         />
                               <Text >
                                  {item.name}
                               </Text>
@@ -58,4 +57,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default StudentScreen;
+export default PakaianAdat;
