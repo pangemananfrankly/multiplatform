@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, StyleSheet, View, ScrollView, Image } from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, SafeAreaView } from 'react-native';
+import Constants from 'expo-constants';
 // import { SizeClassIOS } from 'expo/build/ScreenOrientation/ScreenOrientation';
 
 const SejarahTalaud = () => {
@@ -9,17 +10,17 @@ const SejarahTalaud = () => {
 
     return (
         
-
-       <View>
-       
-        <ScrollView >
-         <View>
-            <Image 
-                style={styles.size}
-                source={require('../assets/Talaud.jpg')}
-            />
-        </View>
-        <View>
+        <SafeAreaView style={styles.container}>
+             <ScrollView style={styles.scrollView}>
+             <View>
+                  <Image 
+                      style={styles.image}
+                     source={require('../assets/Talaud.jpg')}
+                 />
+            </View>
+             <ScrollView >
+                     <View style={styles.bodyView}>
+                        <View>
             <Text  style={styles.textStyle} > 
             SEJARAH SINGKAT TENTANG TALAUD
             Letak Geografis Talaud
@@ -42,28 +43,25 @@ const SejarahTalaud = () => {
             Kita juga dapat mengetahui asal-usul orang Talaud berdasarkan cerita rakyat, seperti yang disebutkan diatas Talo dan Oda adalah manusia pertama ditalaud. Cerita lain adalah Hikayat yang berjudul “Alamona Otaumata Ntaloda” (manusia pertama ditalaud).
             Cerita lain juga mengatakan tentang asal usul orang talaud berasal dari Filipina selatan. Dikisahkan tiga orang yaitu Gumansalangi dan istrinya Kondawulaeng bersama Bawanulare berlayar ketimur. Ketika sampai di pulau Sangir, Gumansalangi dan istrinya Kondawulaeng tidak berlayar dan menetap disana, sedangkan Bawanulare tetap melanjutkan pelayaran sampai di Pulau Kabaruan.
             - Kerajaan Di Talaud
-            Petunjuk ataupun bukti-bukti tentang kerajaan talud sangat sedikit, namun yang pasti di talaud telah berdiri kerajaan sejak jaman Majapahit. Dalam syair Prapanca pada kitab negarakartagama pada zaman gajah mada (1364), Talaud disebut sebgai udamakatrayadi atau udamakatraya. 
+            Petunjuk ataupun bukti-bukti tentang kerajaan talud sangat sedikit, namun yang pasti di talaud telah berdiri kerajaan sejak jaman Majapahit. Dalam syair Prapanca pada kitab negarakartagama pada zaman gajah mada (1364), Talaud disebut sebagai udamakatrayadi atau udamakatraya. 
             </Text>
-        </View>
-       <View>
-            <Image 
-                style={styles.size}
-                source={require('../assets/gambar1.jpg')}
-            />
-            <Text style={styles.textStyle2}>
-                {myName}
-            </Text>
-            <Text style={styles.textStyle} > 
-                This is component Screen {helloWorld}
-            </Text>
-        </View>   
-            
-        </ScrollView> 
-     </View>   
+                        </View>
+                    </View>
+             </ScrollView>   
+             </ScrollView>
+    </SafeAreaView> 
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: Constants.statusBarHeight,
+      },
+      scrollView: {
+        backgroundColor: 'white',
+        marginHorizontal: 10,
+      },
    
     textStyle: {
         fontSize: 16,
@@ -78,9 +76,24 @@ const styles = StyleSheet.create({
     size:{
         
         width: "50%", 
-        height: "50%",
+        height: "20%",
+        justifyContent: "center"
        
+    },
+    title:{
+        fontSize:18,
+        flex:1,
+      },
+      bodyView:{
+          color: 'black'
+      },
+      image: {
+        flex: -1,
+        width: 350,
+        height: 200,
+        resizeMode: 'contain'
     }
+
 });
 
 export default SejarahTalaud;

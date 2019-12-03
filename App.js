@@ -1,51 +1,57 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import SejarahTalaud from './screens/Sejarah';
+import TabViewExample from './screens/examp';
+import UserProfileView from './screens/About';
+import Tempatwisata from './screens/Tempatwisata';
+import Rumahadat from './screens/Rumahadat';
 import PakaianAdat from './screens/PakaianAdat';
-import Menu from './screens/Menu';
-import About from './screens/About';
+import SejarahTalaud from './screens/Sejarah';
+import Menu from './screens/Menu'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+
+
+
 const navigator = createStackNavigator({
-  Aboutapp: About,
-  sejarah: SejarahTalaud,
-  pakaian: PakaianAdat,
-  Home: Menu
+ 
+  // examp: TabViewExample,
+  // Aboutapp: UserProfileView,
+  // Tempat: Tempatwisata,
+  // Rumah: Rumahadat,
+  // pakaian: PakaianAdat,
+  // sejarah: SejarahTalaud,
+  Home: Menu,
   
   
 },{
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    headerTitle: 'Taloda',
+  
+    headerTitle: 'Taroda',
     headerStyle:{
-      backgroundColor:'#add8e6',
-        height: 40,
-        marginTop: 20,
+      backgroundColor: "#03A9F4",
       shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-     shadowOpacity: 0.2,
-    
-    },
-    // headerRight: {
-
-    // }
-    // headerBackImage:'../assets/icon.png'
-    // leftComponent :{{ icon: 'menu', color: '#fff' }},
-    // centerComponent:{{ text: 'MY TITLE', style: { color: '#fff' } }}
-    // rightComponent:{{ icon: 'home', color: '#fff' }
+      fontWeight: "bold",
+     shadowOpacity: 0.5,
+     
+    }
     
   }
-});
+  
+}
+ 
+) 
 
-export default createAppContainer(navigator);
+
+
+export default createAppContainer (navigator);
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative'
+    flex: 2,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+   
 
     
   },
